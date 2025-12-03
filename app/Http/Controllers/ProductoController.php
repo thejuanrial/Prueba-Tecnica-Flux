@@ -64,7 +64,7 @@ public function update(Request $request, Producto $producto)
 
 // eliminar producto
 
-public unction destroy(Producto $producto)
+public function destroy(Producto $producto)
 {
     $producto->delete();
 

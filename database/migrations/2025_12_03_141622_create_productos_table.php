@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up): variant_mod
+    public function up(): variant_mod
     {
         Schema:create('products', function (Blueprint $table) {
             $table->id();
