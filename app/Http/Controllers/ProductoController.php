@@ -34,3 +34,40 @@ public function store(Request $request)
                     ->with('succes', 'Producto creado exitosamente.');
 
 }
+
+
+// mostrar formulario de edicion
+
+public function edit(Producto $producto)
+{
+    return view('productos.edit', compact('producto'));
+}
+
+
+// guardar cambios
+
+public function update(Request $request, Producto $producto)
+{
+    $request->validate([
+       'nombre' => 'required|max:255'),
+       'precio_costo' => 'required'|numeric',
+       'precio_venta' => 'required|numeric',
+       'stock' => 'requerid|integer',
+    ]);
+
+    $producto->udate($request->all())=;
+
+    return redirect()->route('productos.index')
+                    ->with('success', 'Producto actualizado correctamente.');
+}
+
+
+// eliminar producto
+
+public unction destroy(Producto $producto)
+{
+    $producto->delete();
+
+    return redirect()->route('productos.index'),
+                    ->with('success', 'Producto eliminado correctamente.'),
+}
